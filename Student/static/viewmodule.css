@@ -1,0 +1,23 @@
+.chap {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 82%;
+}
+
+.chap td, .chap th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.chap tr {background-color: white ;}
+
+.chap tr:hover {background-color: #b7bfc8;}
+
+.chap th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#596673;
+  color: black;
+}
+  

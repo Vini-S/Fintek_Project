@@ -1,0 +1,26 @@
+{% extends 'Student/base1.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+  <title>Leave Records</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/leavedetails.css' %}">
+</head>
+<h1><center>Faculty Leave Details</center></h1>
+<table class="leave" align="right" >
+<tr>
+  <th>Faculty Email Id</th>
+  <th>Start_date</th>
+  <th>End_date</th>
+</tr> 
+{% for i,j,k in row %}
+<tr>
+  <td>{{i}}</td>
+  <td>{{j}}</td>
+  <td>{{k}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

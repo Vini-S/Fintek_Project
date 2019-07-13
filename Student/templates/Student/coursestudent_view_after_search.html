@@ -1,0 +1,24 @@
+{% extends 'Student/base1.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+	<title>Search Result</title>
+  	<link rel="stylesheet" type="text/css" href="{% static 'viewcourse.css' %}">
+</head>
+<h1><center>Course Details</center></h1>
+<table class="cour" align="right" >
+  <tr>
+		<th>Course_code</th>
+  	<th>Course_name</th>
+  </tr>
+  {% for i,j in row2 %}
+	<tr>
+  	<td>{{i}}</td>
+  	<td>{{j}}</td>
+  </tr>    
+  {% endfor %}
+</table>
+{% endblock %}

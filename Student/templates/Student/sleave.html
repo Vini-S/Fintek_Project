@@ -1,0 +1,45 @@
+
+{% extends 'Student/base1.html' %}
+
+{% load static %}
+
+{% block content %} 
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Student Leave Form</title>
+<link rel="stylesheet" href="{% static 'sleave.css' %}">
+</head>
+
+    <center>  
+        <table>
+            <tr>
+                <td>
+                    <form method="POST"  action="{% url 'addl' %}">
+                        {% csrf_token %}
+                        <div class="leavestud">
+                            <div class="studentleave">
+                                <label>Starting Date</label>
+                                <input type="date" name="start" id="start" required>
+                            
+                                <label>Ending Date</label>
+                                <input type="date" name="end" id="end" required>
+                            
+                                <label>Reason</label><br>
+                                <textarea id="reason" name="reason" required></textarea>
+    			
+                                <div  class="form-action-buttons">
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </center>
+    {% if addleave%}
+        {{"<script>window.alert('Leave added Successfully');</script>"}}
+    {% endif%}
+{% endblock %}

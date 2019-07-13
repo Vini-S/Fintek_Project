@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>   
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'base1.css' %}">
+
+</head>
+<body bgcolor="#D3D3D3">  
+<div class="header">
+	<form action="{% url 's_view_after_search' %}" method="POST">
+		<div class="search-container">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<table class="search">
+				<tr>
+					<td><input type="text" placeholder="Search.." name="name" ></td>
+      				<td><button class="btn" type="submit">Search</button></td>
+       				<a href="{% url 'logout-page' %}">LOGOUT</a>
+  				</tr>
+  			</table>
+		</div>
+    </form>
+</div>
+<div >
+	<ul class="sidebar">
+		<li class="sidebar-brand">Student Dashboard</li>
+		<li class="topic">Student
+			<ul>
+				<li class="view"><a href="{% url 'studentview' %}">View Student</a></li>
+				<li class="applyleaves"><a href="{% url 'sleave' %}">Apply for Leaves</a></li>
+				<li class="leaves"><a href="{% url 'sviewleave' %}">View Student Leaves</a></li>
+				<li class="Progress"><a href="#">View Course Progress</a></li>
+			</ul>
+		</li>
+
+		<li class="topic">Faculty
+			<ul>	
+				<li class="view"><a href="{% url 'facultyview' %}">View Faculty</a></li>
+				<li class="leaves"><a href="{% url 'sfviewleave' %}">View Faculty leaves</a></li>
+				<li class="Progress"><a href="#">View Student Course </a></li>
+			</ul>
+		</li>
+
+		<li class="topic">Course
+			<ul>	
+				<li class="view"><a href="{% url 'courseview' %}">View Course</a></li>
+			</ul>
+		</li>
+
+		<li class="topic">Module
+            <ul>    
+                <li class="view"><a href="{% url 'moduleview' %}">View Module</a></li>
+            </ul>
+        </li>
+
+        <li class="topic">Calender
+			<ul>
+				<li class="Calendar"><a href="{% url 'scalender' %}">View Calender</a></li>
+			</ul>
+		</li>
+	</ul>	
+</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

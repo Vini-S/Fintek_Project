@@ -1,0 +1,24 @@
+.leave {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 82%;
+}
+
+.leave td, .leave th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.leave tr {background-color: white ;}
+
+.leave tr:hover {background-color: #b7bfc8;}
+
+.leave th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#596673;
+  color: black;
+}
+
+
