@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE HTML >
+<html><head><title>Calendar 2019</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/calender.css' %}">
+</head>
+<body>
+<div class="title">June 2019</div>
+<table border="1">
+<tr>
+    <th>Sun</th>
+    <th>Mon</th>
+    <th>Tue</th>
+    <th>Wed</th>
+    <th>Thu</th>
+    <th>Fri</th>
+    <th>Sat</th>
+</tr>
+<tr>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">1</a></span></td>
+</tr>
+<tr>
+    <td><span class="date"><a href="{% url 'leave' %}">2</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">3</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">4</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">5</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">6</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">7</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">8</a></span></td>
+</tr>
+<tr>
+    <td><span class="date"><a href="{% url 'leave' %}">9</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">10</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">11</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">12</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">13</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">14</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">15</a></span></td>
+</tr>
+<tr>
+    <td><span class="date"><a href="{% url 'leave' %}">16</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">17</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">18</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">19</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">20</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">21</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">22</a></span></td>
+    
+</tr>
+<tr>
+    <td><span class="date"><a href="{% url 'leave' %}">23</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">24</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">25</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">26</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">27</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">28</a></span></td>
+    <td><span class="date"><a href="{% url 'leave' %}">29</a></span></td>
+</tr>
+<tr><td><span class="date"><a href="{% url 'leave' %}">30</a></span></td>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date">&nbsp;</span></td>
+    <td><span class="date">&nbsp;</span></td>
+</tr>
+</table>
+
+</body></html>

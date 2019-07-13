@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>    
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
+</head>
+<body bgcolor="	#D3D3D3	">
+<div class="header">
+	<form action="{% url 'view_after_search' %}" method="POST">
+		<div class="search-container">
+			{% csrf_token %}
+			{{ form.as_p }} 
+			<table class="search">
+				<tr>
+					<td class="text"><input type="text" placeholder="Search.." name="name" ></td>
+					<td><button class="btn" type="submit">Search</button></td>
+					<a href="{% url 'logout-page' %}">LOGOUT</a>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>
+     
+<div>
+	<ul class="sidebar">
+		      <li class="sidebar-brand">Dashboard</li>
+		<li class="topic">Student
+			<ul>
+				<li class="add"><a href="{% url 'addstudent' %}">Add Student</a></li>
+				<li class="view"><a href="{% url 'viewstudent' %}">View Student</a></li>
+				<li class="leaves"><a href="{% url 'studentleave' %}">View Student leaves</a></li>
+				<li class="Progress"><a href="#">View Course Progress</a></li>
+			</ul>
+		</li>
+
+		<li class="topic">Faculty
+			<ul>	
+				<li class="add"><a href="{% url 'addfaculty' %}">Add Faculty</a></li>
+				<li class="view"><a href="{% url 'viewfaculty' %}">View Faculty</a></li>
+				<li class="leaves"><a href="{% url 'facultyleave' %}">View faculty leaves</a></li>
+				<li class="Progress"><a href="#">View Student Course </a></li>
+				<li class="add"><a href="">Assign Batch</a></li>
+			</ul>
+		</li>
+
+		<li class="topic">Course
+			<ul>	
+				<li class="add"><a href="{% url 'addcourse' %}">Add Course</a></li>
+				<li class="view"><a href="{% url 'viewcourse' %}">View Course</a></li>
+				<li class="Planner"><a href="{% url 'Planner-form' %}">Generate Session Planner</a></li>
+				<li class="add"><a href="">Create Batch</a></li>
+			</ul>
+		</li>
+
+		<li class="topic">Assign Module to Courses
+			<ul>
+				<li class="add"><a href="{% url 'assigncm' %}">Add Module</a></li>
+                <li class="view"><a href="{% url 'vassign' %}">View Module</a></li>
+			</ul>
+		</li>
+		
+		<li class="topic">Module
+            <ul>    
+                <li class="add"><a href="{% url 'addmodule' %}">Add Module</a></li>
+                <li class="view"><a href="{% url 'vmodule' %}">View Module</a></li>
+            </ul>
+        </li>
+
+		<li class="topic">Calender
+			<ul>
+				<li class="Calendar"><a href="{% url 'calender' %}">View Calender</a></li>
+			</ul>
+		</li>
+
+		<li class="topic"><a href="#">Sales</a>
+		</li>
+	</li>
+	</ul>	
+</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

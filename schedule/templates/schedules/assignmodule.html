@@ -1,0 +1,62 @@
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+    <title>Assign Module Detail</title>
+    <link rel="stylesheet" href="{% static 'css/assignmodule.css' %}">
+</head>
+
+<center>
+    <form  method = "POST" action="{% url 'assignmodule' %}" id="form">
+        <table id="drop">
+            {% csrf_token %}
+            <tr>
+                <td><label>Course Name</label></td>
+                <td>
+                    <select name ='c_code'>
+                        {% for i,j in lst1 %}
+                        <option value="{{i}}">{{j}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Module Name</label></td>
+                <td id="moduleNameList">
+                    <select id= "mid0" name ='mid0'>
+                        {% for i,j in lst2 %}
+                        <option value="{{i}}">{{j}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button type="button" onclick="addmodule()">Add More</button>
+        <div  class="form-action-buttons">
+            <input type="submit" name="submit" value="Add">
+        </div>
+    </form>
+</center>
+{% if addmodule%}
+    {{"<script>window.alert('Added Successfully');</script>"}}
+{% endif%}
+
+<script>
+    var mid1 = 1;
+    function addmodule(){
+        var x = document.getElementById("drop");
+        var r = x.insertRow(-1);
+        var moduleNameList = document.getElementById('mid0');
+        var moduleList = moduleNameList.innerHTML;
+        var col1 = r.insertCell();
+        var col2 = r.insertCell();
+        col1.innerHTML="<label>Module Name</label>";
+        col2.innerHTML= "<select id='mid"+mid1+"' name = 'mid"+mid1+"'>"+moduleList+"</select>";
+        mid1++;
+    }
+</script>
+
+{% endblock %}

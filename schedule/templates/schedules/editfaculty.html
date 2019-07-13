@@ -1,0 +1,48 @@
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+    <title>
+       Edit Faculty Details
+    </title>
+    <link rel="stylesheet" href="{% static 'css/editfaculty.css' %}">
+</head>
+
+<body><center>
+    <table>
+        <tr>
+            <td>
+                <form method = "POST" action="{% url 'editfaculty' %}">
+                    {% csrf_token %}
+                    <div class="facedit">
+                        <div class="editfac">
+                            <label>Id*</label><label class="validation-error hide" id="idValidationError">This field is required.</label>
+                            {% for i,j,k,l,m in row %}
+                            <input type="text" name="fid" id="fid" value="{{i}}" required>
+                
+                            <label>First Name</label>
+                            <input type="text" name="f_name" id="f_name" value="{{j}}" required>                      
+
+                            <label>Last Name</label>
+                            <input type="text" name="l_name" id="l_name" value="{{k}}" required>                      
+
+                            <label>Phone Number</label>
+                            <input type="tel" name="phno" id="phno" value="{{m}}" pattern="[0-9]{10}" required>
+                                {% endfor %}
+                            <div  class="form-action-buttons">
+                                <input type="submit" name="submit" value="Edit">
+                            </div>
+                        </div> 
+                    </div>   
+                </form>
+            </td>
+        </tr>
+    </table>
+</center>
+{% if efaculty%}
+    {{"<script>window.alert('Faculty Updated Successfully');</script>"}}
+{% endif%}
+{% endblock %}

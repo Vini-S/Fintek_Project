@@ -1,0 +1,43 @@
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<head>
+    <title>
+       Edit Course Details
+    </title>
+    <link rel="stylesheet" href="{% static 'css/editcourse.css' %}">
+</head>
+
+<body><center>
+    <table>
+        <tr>
+            <td>
+                <form method = "POST" action="{% url 'editcourse' %}">
+                    {% csrf_token %}
+                    <div class="coursedit">
+                        <div class="editcou">
+                            <label>Course Code*</label><label class="validation-error hide" id="idValidationError">This field is required.</label>
+                            {% for i,j in row %}
+                            <input type="text" name="c_code" id="c_code" value="{{i}}" required>
+                    
+                            <label>Course Name</label>
+                            <input type="text" name="name" id="name" value="{{j}}" required>                     
+
+                             {% endfor %}
+                            <div  class="form-action-buttons">
+                                <input type="submit" name="submit" value="Edit">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</center>
+{% if ecourse%}
+    {{"<script>window.alert('Course Updated Successfully');</script>"}}
+{% endif%}
+
+{% endblock %}

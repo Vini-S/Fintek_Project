@@ -1,0 +1,43 @@
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Module Details
+    </title>
+    <link rel="stylesheet" href="{% static 'css/addmodule.css' %}">
+</head>
+
+<body><center>
+    <table>
+        <tr>
+            <td>
+                <form  method = "POST" enctype="multipart/form-data" action="{% url 'addm' %}">
+                    {% csrf_token %}
+                    <div class="addm-box">
+                        <div class="addmod">
+                            <label>Module id</label>
+                            <input type="text" name="mid" id="name" required>
+
+                            <input type="file" name="mfile">
+
+                            <div  class="form-action-buttons">
+                                <input type="submit" value="Add">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</center>
+{% if addmodule%}
+    {{"<script>window.alert('Module added Successfully');</script>"}}
+{% endif%}
+{% endblock %}

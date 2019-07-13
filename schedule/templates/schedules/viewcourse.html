@@ -1,0 +1,28 @@
+{% extends 'schedules/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+  <title>Course List</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/viewcourse.css' %}">
+</head>
+
+<h1><center>Course Details Table</center></h1>
+<table class="cour" align="right" >
+<tr>
+  <th>Course Code</th>
+  <th>Course Name</th>
+  <th>Edit</th>
+  <th>Delete</th>  
+</tr>
+{% for i,j in row %}
+<tr>
+  <td>{{i}}</td>
+  <td>{{j}}</td>
+  <td><a href="{% url 'ecourse' %}?c_code={{i}}">Edit</a></td>
+  <td><a href="{% url 'deletecourse' %}?c_code={{i}}">Delete</a></td>
+{% endfor %}
+</table>
+{% endblock %}

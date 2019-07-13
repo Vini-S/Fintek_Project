@@ -1,0 +1,30 @@
+{% extends 'schedules/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+    <title>Module Details</title>
+    <link rel="stylesheet" href="{% static 'css/viewmodule.css' %}">
+</head>
+<h1><center>Module Details Table</center></h1>
+<table class="chap" align="right">
+<tr>
+  <th>Module Id</th>
+  <th>Module Name</th>
+  <th>Course code</th>
+  <th>Edit</th>   
+  <th>Delete</th>
+</tr>
+{% for i,j,k in row %}
+<tr>
+  <td>{{i}}</td>
+  <td>{{j}}</td>
+  <td>{{k}}</td>
+  <td><a href="{% url 'emodule' %}?mid={{i}}">Edit</a></td>
+  <td><a href="{% url 'deletemodule' %}?mid={{i}}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<head>
+    <title>
+       Edit Assign Details
+    </title>
+    <link rel="stylesheet" href="{% static 'css/editassign.css' %}">
+</head>
+
+<body><center>
+    <table>
+        <tr>
+            <td>
+                <form method = "POST" action="{% url 'editassign' %}">
+                    {% csrf_token %}
+                    <div class="assedit">
+                        <div class="editass">
+                            {% for i,j,k in row %}
+                            <input type="hidden" name="cmid" id="cmid" value="{{i}}" required>
+       
+                            <label>Course Code</label>
+                            <select name ='c_code'>
+                                {% for x,y in lst1 %}
+                                {% if x == j %}
+                                    <option selected name = 'c_code' value="{{x}}">{{x}}-{{y}}</option>
+                                {% else %}
+                                    <option name = 'c_code' value="{{x}}">{{x}}-{{y}}</option>
+                                {% endif %}
+                               {% endfor %}
+                            </select>
+
+                            <label>Module Name</label>
+                            <select name="mid">
+                                {% for x,y in lst2 %}
+                                {% if x == k %}
+                                    <option selected name = 'mid' value="{{x}}">{{x}}-{{y}}</option>
+                                {% else %}
+                                    <option name = 'mid' value="{{x}}">{{x}}-{{y}}</option>
+                                {% endif %}
+                               {% endfor %}
+                            </select>
+      
+                            {% endfor %}
+                            <div  class="form-action-buttons">
+                                <input type="submit" name="submit" value="Edit">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</center>
+{% if emodule%}
+    {{"<script>window.alert('Updated Successfully');</script>"}}
+{% endif%}
+{% endblock %}

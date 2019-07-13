@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+<head>
+	<title>Forget Password</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/forget.css' %}">
+</head>
+<body>
+	<center>
+		<div class="login-box">
+			<div class="login">
+				<form action="{% url 'password_reset_done' %}" method="POST">
+					{% csrf_token %}
+					<table>
+						<tr>
+							<td>
+								<label>Enter your email id:-</label>
+								<input type="email" name="emailid" required><br>
+
+								<br><input type="submit" name="submit" value="submit"><br>
+								<br><a href="{% url 'index-page' %}">Go Back</a><br>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</center>
+</body>
+</html>

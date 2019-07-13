@@ -1,0 +1,57 @@
+{% load static %}
+
+<!-- leave details -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Leave Details
+    </title>
+    <link rel="stylesheet" href="{% static 'css/leave.css' %}">
+</head>
+
+<body>
+    <center>    <table>
+        <tr>
+            <td>
+                <form method="POST">
+                    <!-- <div>
+			             <label>Id*</label><label class="validation-error hide" id="idValidationError">This field is required.</label>
+                        <input type="text" name="id" id="id" required>
+                    </div> -->
+                    <div>
+                        <label>First Name</label>
+                        <input type="text" name="f_name" required>
+                    </div>
+
+                    <div>
+                        <label>Last Name</label>
+                        <input type="text" name="l_name" required>
+                    </div>
+
+                    <div>
+                        <label>Starting Date</label>
+                        <input type="date" name="start" id="start" required>
+                    </div>
+                    <div>
+                        <label>Ending Date</label>
+                        <input type="date" name="end" id="end" required>
+                    </div>
+                    <div>
+                        <label>Reason</label>
+                        <textarea id="reason" name="reason" required></textarea>
+                    </div>
+			
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            
+        </tr>
+    </table><center>
+
+</body>
+
+</html>

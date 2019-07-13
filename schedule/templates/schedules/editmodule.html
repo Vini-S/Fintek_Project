@@ -1,0 +1,47 @@
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <title>
+       Edit Module Details
+    </title>
+    <link rel="stylesheet" href="{% static 'css/editmodule.css' %}">
+</head>
+
+<body><center>
+    <table>
+        <tr>
+            <td>
+                <form method = "POST" action="{% url 'editmodule' %}">
+                    {% csrf_token %}
+                    <div>
+                        <label>Module Code*</label><label class="validation-error hide" id="idValidationError">This field is required.</label>
+                        {% for i,j,k in row %}
+                        <input type="text" name="mid" id="mid" value="{{i}}" required>
+                
+                    </div>
+                    <div>
+                        <label>Module Name</label>
+                        <input type="text" name="name" id="name" value="{{j}}" required>                      
+                    </div>
+
+                     <div>
+                        <label>Course Code</label>
+                        <input type="text" name="c_code" id="c_code" value="{{k}}" required>                      
+                    </div>
+
+                        {% endfor %}
+                    <div  class="form-action-buttons">
+                        <input type="submit" name="submit" value="Edit">
+                    </div>
+
+                </form>
+            </td>
+        </tr>
+    </table>
+</center>
+{% if emodule%}
+    {{"<script>window.alert('Module Updated Successfully');</script>"}}
+{% endif%}
+{% endblock %}

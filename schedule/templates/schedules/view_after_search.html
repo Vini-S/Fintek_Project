@@ -1,0 +1,34 @@
+{% extends 'schedules/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+    <title>Student List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/viewstdtable.css' %}">
+</head>
+<h1><center>Student Details</center></h1>
+<table class="candidate" align="right">
+<tr>
+  <th>Id</th>
+  <th>Student First Name</th>
+  <th>Student Last Name</th>
+  <th>Email</th>
+  <th>courseid</th>
+  <th>Edit</th>  
+  <th>Delete</th>
+</tr>
+{% for i,j,k,l,m in row %}
+<tr>
+  <td>{{i}}</td>
+  <td>{{j}}</td>
+  <td>{{k}}</td>
+  <td>{{l}}</td>
+  <td>{{m}}</td>
+  <td><a href="{% url 'estudent' %}?s_id={{i}}">Edit<a></td>
+  <td><a href="{% url 'deletestudent' %}?s_id={{i}}">Delete<a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

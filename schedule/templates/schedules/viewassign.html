@@ -1,0 +1,33 @@
+{% extends 'schedules/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+  <title>Course List</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/viewassign.css' %}">
+</head>
+
+<h1><center>Assigned Modules Details Table</center></h1>
+<table class="assign" align="right">
+<tr>
+  <th>Course Code</th>
+  <th>Course Name</th>
+  <th>Module Code</th>
+  <th>Module Name</th>
+  <th>Edit</th>
+  <th>Delete</th>
+</tr>
+{% for i,j,k,l,m in row %}
+<tr>
+  <td>{{j}}</td>
+  <td>{{k}}</td>
+  <td>{{l}}</td>
+  <td>{{m}}</td>
+  <td><a href="{% url 'eassign' %}?cmid={{i}}">Edit</a></td>
+  <td><a href="{% url 'deleteassign' %}?cmid={{i}}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

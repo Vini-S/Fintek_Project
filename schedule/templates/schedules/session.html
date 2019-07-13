@@ -1,0 +1,81 @@
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Generate Session</title>
+    <link rel="stylesheet" href="{% static 'css/session.css' %}">
+</head>
+
+<center>
+    <table>
+        <tr>
+            <td>
+                <form action="{% url 'generateplanner' %}" method="POST">
+                {% csrf_token %}
+                    <div class="add-session">
+                        <div class="addses">
+                            <label>Course Code:</label>
+                            {% if c_code_selected %}
+                            <select id='c_code' name ='c_code' onchange="course(this)">
+                                {% for i,j in lst1 %}
+                                {% if c_code_selected == i %}
+                                <option name = 'c_code' selected value="{{i}}">{{j}}</option>
+                                {% else %}
+                                <option name = 'c_code'value="{{i}}">{{j}}</option>
+                                {% endif %}
+                                {% endfor %}
+                            </select>
+                                {% else %}
+                                <select id='c_code' name ='c_code' onchange="course(this)">
+                                    <!-- <option></option> -->
+                                    {% for i,j in lst1 %}
+                                    <option name = 'c_code' value="{{i}}">{{j}}</option>
+                                    {% endfor %}
+                                </select><br><br>
+                            {% endif%}
+
+                            <label>Module ID:</label>
+                            <select name="mid">
+                                <option name = 'mid'value="0">--All Module--</option>
+                                {% for i,j in lst2 %}
+                                <option name = 'mid' value="{{i}}">{{j}}</option>
+                                {% endfor %}
+                            </select><br><br>
+
+                            <label>Start date </label>
+                            <input type="date" name="date" id="date"><br>
+
+                            <br><label>faculty</label>
+                            <select name="f_id">
+                            {% for i,j in lst3 %}
+                            <option name = 'mid' value="{{i}}">{{j}}</option>
+                            {% endfor %}
+                            </select><br>
+
+                            <br><label>Batch type</label>
+                            <select name="Batch" id="Batch">
+                                <option value="1">M.W.F</option>
+                                <option value="2">T.TH.S</option>
+                                <option value="3">SAT-SUN</option>
+                                <option value="4">Regular</option>                        
+                            </select><br>
+                        
+                            <div  class="form-action-buttons">
+                                <input type="submit" value="plan">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</center>
+<script>
+function course(option){
+        location.replace("{% url 'Planner-form' %}" +option.value);
+    }
+
+</script>
+{% endblock %}

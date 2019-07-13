@@ -1,0 +1,60 @@
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+    <title>Faculty details</title>
+    <link rel="stylesheet" href="{% static 'css/addfaculty.css' %}">
+</head>
+
+<center>
+    <table>
+        <tr>
+            <td>
+                <form  method = "POST" action="{% url 'addsf' %}">
+                    {% csrf_token %}
+                    <div class="addf-box">
+                        <div class="addfac">
+                            <label>First Name</label>
+                            <input type="text" name="f_name" id="f_name" required>
+
+                            <label>Last Name</label>
+                            <input type="text" name="l_name" id="l_name" required>
+
+                            <label>Email Id</label>
+                            <input type="email" name="emailid" id="emailid" required>
+
+                            <label>Password</label>
+                            <input type="password" name="password" id="password" required><br>
+                            <input type="checkbox" name="show password" onclick ="showpassword()">Show Password<br>
+
+                            <label>Phone</label>
+                            <input type="tel" name="phno" id="phno" pattern="[0-9]{10}" required>
+
+                            <div  class="form-action-buttons">
+                                <input type="submit" name="submit" value="Add">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+<script>
+function showpassword() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+</center>
+{% if addfaculty%}
+    {{"<script>window.alert('Faculty added Successfully');</script>"}}
+{% endif%}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'schedules/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+  <title>Leaves Record</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/leavedetails.css' %}">
+</head>
+
+
+<table id="Leaves" >
+<tr>
+  <th>Email Id</th>
+  <th>Start_date</th>
+  <th>End_date</th>
+  <th>Reason</th>
+  <th>Status</th>      
+</tr>
+{% for i,j,k,l,m,n in row %}
+<tr>
+  <!-- <td>{{i}}</td> -->
+  <td>{{j}}</td>
+  <td>{{k}}</td>
+  <td>{{l}}</td>
+  <td>{{m}}</td>
+  <td>{{n}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

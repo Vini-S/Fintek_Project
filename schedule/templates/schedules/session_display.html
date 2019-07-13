@@ -1,0 +1,33 @@
+
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}  
+
+
+<head>
+    <title>Session Planner</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/viewstdtable.css' %}">
+</head>
+<h1><center>Sessions</center></h1>
+<table class="candidate" align="right">
+<tr>
+  <th>Session ID</th>
+  <th>Session Type</th>
+  <th>Module ID</th>
+  <th>Start Date</th>
+</tr>
+{% for i,j,k,l in lst2 %}
+<tr>
+  <td>{{i}}</td>
+  <td>{{j}}</td>
+  <td>{{k}}</td>
+  <td>{{l}}</td>
+  {% endfor %}
+</tr>
+</table>
+
+{% endblock %}
+
+

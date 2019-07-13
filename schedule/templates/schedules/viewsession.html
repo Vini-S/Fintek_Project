@@ -1,0 +1,46 @@
+{% extends 'schedules/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+s<html>
+<head>
+<title> Session </title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/viewsession.css' %}">
+
+</head>
+<body>
+
+<div class="container">
+<div class="tab tab-1">
+<table id="table" border="1">
+<tr>
+<form method = "POST" action="{% url 'viewsession' %}">
+<th> Sr.No</th>
+<th> Module Name</th>
+<th> Start Date</th>
+<th> End Date</th>
+</tr>
+<tr>
+<td> 1</td>
+<td> Introduction</td>
+<td> 23/06/2019</td>
+<td> 24/06/2019</td>
+</tr>
+</table>
+</div>
+<div class="tab tab-2" >
+Sr.No:<input type="number" name="srno" id="srno">
+Module Name:<input type="text" name="module" id="module">
+Start Date:<input type="date" name="sdate" id="sdate">
+End Date:<input type="date" name="edate" id="edate">
+<button onclick="addHtmlTableRow()"> Add</button>
+<button onclick="editHtmlTableRow()"> Edit</button>
+<button onclick="deleteHtmlTableRow()"> Delete</button>
+
+</div>
+</div>
+</body>
+</html>

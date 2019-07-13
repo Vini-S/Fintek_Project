@@ -1,0 +1,34 @@
+{% extends 'schedules/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<head>
+  <title>Faculty List</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/viewfaculty.css' %}">
+</head>
+<h1><center>Faculty Details Table</center></h1>
+<table class="teachers" align="right">
+  <tr>
+    <th>Id</th>
+    <th>Faculty First Name</th>
+    <th>Faculty Last Name</th>
+    <th>Email Id</th>
+    <th>Phone Number</th>  
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  {% for i,j,k,l,m in row %}
+  <tr>
+    <td>{{i}}</td>
+    <td>{{j}}</td>
+    <td>{{k}}</td>
+    <td>{{l}}</td>
+    <td>{{m}}</td>
+    <td><a href="{% url 'efaculty' %}?fid={{i}}">Edit</a></td>
+    <td><a href="{% url 'deletefaculty' %}?email={{l}}">Delete</a></td>
+  </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

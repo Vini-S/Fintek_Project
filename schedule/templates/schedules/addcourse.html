@@ -1,0 +1,45 @@
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Course Details
+    </title>
+    <link rel="stylesheet" href="{% static 'css/addcourse.css' %}">
+</head>
+
+<body><center>
+    <table>
+        <tr>
+            <td>
+                <form  method = "POST" action="{% url 'addcode' %}">
+                    {% csrf_token %}
+                    <div class="addc-box">
+                       <!--  <div>
+                            <label>Course Code</label>
+                            <input type="text" name="c_code" id="c_code" required>
+                        </div> -->
+                        <div class="course">
+                            <label>Course Name</label>
+                            <input type="text" name="name" id="name" required>
+                            
+                            <div  class="form-action-buttons">
+                                <input type="submit" value="Add">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</center>
+{% if addcourse%}
+    {{"<script>window.alert('Course added Successfully');</script>"}}
+{% endif%}
+
+{% endblock %}

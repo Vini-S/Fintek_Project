@@ -1,0 +1,37 @@
+{%extends 'schedules/base.html' %}
+
+{% block content%}
+
+{%load static%}
+
+<head>
+ 	<title>Session Planner</title>
+ 	<link rel="stylesheet" href="{%static 'css/sessionplanner.css%}">
+ </head>
+
+ <center>
+ 	<table>
+ 		<tr>
+ 			<td>
+ 				<form method="POST" action="{%url '' %}">
+ 					{% csrf_token %}
+ 					
+ 					<div>
+ 						<label>Session Value</label>
+ 						<input type="text" name="session value" id="session value">
+ 					</div>
+ 					<div>
+ 						<label>Module Id</label>
+ 						<input type="text" name="module id" id="module id">
+ 					</div>
+ 					<div>
+ 						<label>Module Name</label>
+ 						<input type="text" name="module name" id="module name">
+ 					</div>
+ 				</form>
+ 			</td>
+ 		</tr>
+ 	</table>
+ </center>
+{% endblock %}
+

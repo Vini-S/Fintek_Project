@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
+</head>
+<body bgcolor="#d4cbf4">
+<div class="header">
+  <div class="header-right">
+    <a href="{% url 'logout-page' %}">Logout</a>
+  </div>
+</div>
+<div >
+	<ul class="sidebar">
+		      <li class="sidebar-brand"><a href="">Student Dashboard</a></li>
+		<li><a href="">Student</a>
+			<ul>
+				<li class="view"><a href="{% url 'viewstudent' %}">View Student</a></li>
+				<li class="leaves"><a href="#">View Student leaves</a></li>
+				<li class="applyleaves"><a href="{% url 'leave' %}">Apply for leaves</a></li>
+				<li class="Progress"><a href="#">View Course Progress</a></li>
+			</ul>
+		</li>
+
+		<li><a href="">Faculty</a>
+			<ul>	
+				<li class="add"><a href="{% url 'addfaculty' %}">Add Faculty</a></li>
+				<li class="view"><a href="{% url 'viewfaculty' %}">View Faculty</a></li>
+				<li class="leaves"><a href="#">View faculty leaves</a></li>
+				<li class="Progress"><a href="#">View Student Course </a></li>
+			</ul>
+		</li>
+
+		<li><a href="">Calender</a>
+			<ul>
+				<li class="Calendar"><a href="{% url 'calender' %}">View Calender</a></li>
+			</ul>
+		</li>
+
+		<li><a href="">Course</a>
+			<ul>	
+				<!-- <li class="add"><a href="{% url 'addcourse' %}">Add Course</a></li> -->
+				<li class="view"><a href="{% url 'viewcourse' %}">View Course</a></li>
+				<!-- <li class="Planner"><a href="#">Generate Session Planner</a></li> -->	
+			</ul>
+			</li>
+	</ul>	
+</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

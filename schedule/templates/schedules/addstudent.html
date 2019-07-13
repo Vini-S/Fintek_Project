@@ -1,0 +1,64 @@
+{% extends 'schedules/base.html' %}
+
+{% load static %}
+
+{% block content %}  
+<head>
+    <title>
+        Student Details
+    </title>
+    <link rel="stylesheet" href="{% static 'css/addstudent.css' %}">
+</head>
+
+<center>
+    <table class="stud">
+        <tr>
+            <td>
+                <form method = "POST" action="{% url 'adds' %}">
+                    {% csrf_token %}
+                    <div class="add-box">
+                        <div class="addstud">
+                            <label>First Name</label>
+                            <input type="text" name="f_name" id="f_name" required>
+
+                            <label>Last Name</label>
+                            <input type="text" name="l_name" id="l_name" required>
+
+                            <label>Email Id</label>
+                            <input type="email" name="emailid" id="emailid" required>
+
+                            <label>Password</label>
+                            <input type="password" name="password" id="password" required><br><br>
+                            <input type="checkbox" name="show password" onclick ="showpassword()">Show Password<br>
+
+                            <br><label>Course Code</label>
+                            <select name ='c_code'>
+                                {% for i,j in lst1 %}
+                                <option name = 'c_code' value="{{i}}">{{i}}-{{j}}</option>
+                                {% endfor %}
+                            </select><br>
+
+                            <br><div  class="form-action-buttons">
+                                <input type="submit" name="submit" value="Add">
+                        </div>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+<script>
+function showpassword() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+</center>
+{% if addstudent%}
+    {{"<script>window.alert('Student added Successfully');</script>"}}
+{% endif%}
+{% endblock %}
