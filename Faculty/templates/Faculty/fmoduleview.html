@@ -1,0 +1,26 @@
+{% extends 'Faculty/base2.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+    <title>
+        Module Details
+    </title>
+    <link rel="stylesheet" href="{% static 'css/fmoduleview.css' %}">
+</head>
+<h1><center>Module Details</center></h1>
+<table class="chap" align="right" >
+<tr>
+  <th>Module Id</th>
+  <th>Module Name</th>     
+</tr>
+{% for i,j in row %}
+<tr>  
+  <td>{{i}}</td>
+  <td>{{j}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'Faculty/base2.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+    <title>Student List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fstudentview.css' %}">
+</head>
+<h1><center>Student Details</center></h1>
+<table class="candidate" align="right">
+<tr>
+  <th>Id</th>
+  <th>Student First Name</th>
+  <th>Student Last Name</th>
+  <th>Email</th>
+  <th>courseid</th>
+</tr>
+{% for i,j,k,l,m in row %}
+<tr>
+  <td>{{i}}</td>
+  <td>{{j}}</td>
+  <td>{{k}}</td>
+  <td>{{l}}</td>
+  <td>{{m}}</td>
+  </tr>
+{% endfor %}
+</table>
+{% endblock %}

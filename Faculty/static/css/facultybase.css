@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size:14px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #008080;
+  padding: 10px 10px;
+}
+
+.header a {
+  float: right;
+  text-align: center;
+  color: black;
+  padding: 8px;
+  margin-top: 6px;
+  font-size: 15px; 
+  line-height: 20px;
+  border :2px solid black;
+  text-decoration: none;
+  background-color: white; 
+}
+
+.sidebar {
+  background-color: #2F4F4F;
+  width:235px;
+  height:120%;
+  top:0;
+  bottom:0;
+  left:0;
+  text-align:left;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  text-indent: 15px;
+  line-height: 40px;
+}
+
+.sidebar li .add:hover {
+  background-color:#006666;
+  cursor:pointer;
+}
+
+.sidebar li .view:hover {
+  background-color:#006666;
+  cursor:pointer;
+}
+.sidebar li .leaves:hover {
+  background-color:#006666;
+  cursor:pointer;
+}
+.sidebar li .Progress:hover {
+  background-color:#006666;
+  cursor:pointer;  
+}
+
+.sidebar li .Calendar:hover {
+  background-color:#006666;
+  cursor:pointer;  
+}
+.sidebar li .Planner:hover {
+  background-color:#006666;
+  cursor:pointer;
+}
+
+.sidebar > .sidebar-brand {
+height: 65px;
+font-size: 18px;
+line-height: 60px;
+color: white;
+}
+
+.topic{
+  color: white;
+  cursor: default;
+}
+
+div ul li a
+{
+  text-decoration: none;
+  color:white;
+}
+
+div ul ul {
+  position: relative;
+  display: none;
+}
+div ul li:hover > ul
+{
+  display: block;
+}
+
+.search-container{
+  margin-left: 20%;
+}
+
+input[type=text] {
+  padding: 6px;
+  margin-top:6px;
+  font-size: 17px;
+  border: 2px solid black;
+}
+
+.search-container .btn {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 6px;
+  margin-right: 16px;
+  background:white;
+  font-size: 17px;
+  border: 2px solid black;
+  cursor: pointer;
+}

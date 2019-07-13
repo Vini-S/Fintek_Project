@@ -1,0 +1,24 @@
+{% extends 'Faculty/base2.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+  <title>Course List</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/fcourseview.css' %}">
+</head>
+<h1><center>Course Details Table</center></h1>
+<table class="cour" align="right" >
+<tr>
+    <th>Course Code</th>
+    <th>Course Name</th>
+</tr>
+{% for i,j in row %}
+<tr>
+  <td>{{i}}</td>
+  <td>{{j}}</td> 
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

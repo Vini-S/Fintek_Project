@@ -1,0 +1,30 @@
+{% extends 'Faculty/base2.html' %}
+
+{% block content %}
+
+{% load static %}
+<head>
+  <title>Faculty List</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/facultyviewf.css' %}">
+</head>
+<h1><center>Faculty Details</center></h1>
+<table class="teachers" align="right" >
+<tr>
+  <th>Id</th>
+  <th>FirstName</th>
+  <th>Last Name</th>
+  <th>Email Id</th>
+  <th>Phno</th>
+</tr>
+{% for i,j,k,l,m in row1 %}
+<tr>
+  <td>{{i}}</td>
+  <td>{{j}}</td>
+  <td>{{k}}</td>
+  <td>{{l}}</td>
+  <td>{{m}}</td>
+  </tr>
+{% endfor %}
+</table>
+
+{% endblock %}
