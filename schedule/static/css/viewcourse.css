@@ -1,0 +1,22 @@
+.cour {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 82%;
+}
+
+.cour td, .cour th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.cour tr {background-color: white ;}
+
+.cour tr:hover {background-color: #b7bfc8;}
+
+.cour th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#596673;
+  color: black;
+}

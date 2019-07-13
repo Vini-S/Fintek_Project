@@ -1,0 +1,37 @@
+.facedit{ 
+    text-align: left;
+    width: 300px;
+    top: 52%;
+    position: absolute;
+    left: 47%;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-left: 150px; 
+    transform: translate(-50%,-50%);
+}
+
+.editfac input[type=text], input[type=tel], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.editfac input[type=submit]{   
+    width: 30%;
+    background-color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form div.form-action-buttons{
+    text-align: right;
+
+}
+
+

@@ -1,0 +1,35 @@
+div.title {
+    font: x-large Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 40px;
+    background-color: blue;
+    color: black;
+    }
+table {
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+th {
+    padding: 0 0.5em;
+    text-align: center;
+    background-color:gray;
+    color:white;
+    }
+
+td  {     
+    font-size: medium;
+    padding: 0.25em 0.25em;   
+    width: 14%; 
+    height: 80px;
+    text-align: left;
+    vertical-align: top;
+    }
+.date  {     
+    font-size: large;
+    padding: 0.25em 0.25em;
+    text-align: left;
+    vertical-align: top;
+    }

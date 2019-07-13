@@ -1,0 +1,140 @@
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size:14px;
+}
+
+.btn-default {
+color: #333;
+background-color: #fff;
+border-color: #ccc;
+}
+
+.btn {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: 400;
+line-height: 1.42857143;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+background-image: none;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+
+#page-content-wrapper {
+width: 100%;
+padding: 15px;
+}
+
+#page-content-wrapper {
+padding: 20px;
+}
+
+.sidebar {
+  list-style-type:none;
+  background-color:#333;
+  width:230px;
+  height:120%;
+  top:0;
+  bottom:0;
+  left:0;
+  text-align:left;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition:1s ease;
+}
+
+.sidebar a {
+  text-decoration:none;
+  color:white;
+  transition:1s ease;
+}
+
+.sidebar li {
+  text-indent: 20px;
+  line-height: 40px;
+  transition:0.5s ease;
+}
+
+.sidebar li:hover {
+  background-color:#777;
+  cursor:pointer;
+  text-indent: 30px;
+}
+
+.sidebar > .sidebar-brand {
+height: 65px;
+font-size: 18px;
+line-height: 60px;
+}
+
+div ul li a
+{
+	text-decoration: none;
+	color:white;
+	display: block;
+}
+
+div ul ul {
+	position: relative;
+	display: none;
+}
+div ul li:hover > ul
+{
+	display: block;
+}
+.right
+{
+	float: right;
+	color: blue;
+
+}
+.right a {
+  text-decoration:none;
+  color:red;
+  transition:3s ease;
+}
+.content
+{
+	width: auto;
+	margin-left: 250px;
+	height: auto;
+	background-color: #95a5a6;
+	padding: 15px;
+
+}
+.content p
+{
+	color: #424242;
+	font-size: 0.8em;
+
+}
+.div#box
+{
+	margin-top: 15px;
+
+}
+div#box .box-top
+{
+	color:#fff;
+	text-shadow: 0px 0px 1px #ddd;
+	background-color: #2980b9;
+	padding: 5px;
+
+}
+div#box .box-panel
+{
+
+}
+

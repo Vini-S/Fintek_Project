@@ -1,0 +1,27 @@
+#form{ 
+    text-align: left;
+    width: 300px;
+    top: 30%;
+    position: absolute;
+    left: 47%;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-left: 150px; 
+    transform: translate(-50%,-50%);
+}
+
+input[type=submit]{
+    width: 30%;
+    background-color:white;
+    color: #000;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-action-buttons{
+    text-align: right;
+
+}

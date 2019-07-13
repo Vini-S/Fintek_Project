@@ -1,0 +1,29 @@
+#grad{
+  height: -webkit-fill-available;
+  background-image: linear-gradient(#BBD2C5, #536976); 
+}
+
+.login-box{
+  border: 1px solid black; 
+  padding: 8px;
+	width: 280px;
+	top: 55%;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,-50%);
+  background-color: white;
+  box-shadow: 10px 10px 5px teal;
+  height: 290px;
+}
+   
+h1{
+font-size: 40px;
+padding: 70px;
+color: black;
+}
+
+input[type=email], input[type=password] {
+  padding: 12px 30px;
+  margin: 5px 0px;
+  border: 1px solid black;
+}
